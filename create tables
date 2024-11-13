@@ -1,0 +1,14 @@
+import pymysql
+#query
+query="CREATE TABLE STUDENT_DETAILS(SID int, SNAME VARCHAR(50),SCOURCE VARCHAR(50), SPHONE VARCHAR(10))"
+
+#mysql connection string
+con=pymysql.connect(host="localhost",user="root",password="Tejesh69",database="act_student_db")
+#cursor creation
+cur=con.cursor()#enable the access data globally or concurrently
+#query execution
+cur.execute(query)
+con.commit()
+print("Tables created successfully in database")
+#connection close
+con.close()
