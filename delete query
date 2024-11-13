@@ -1,0 +1,12 @@
+import pymysql
+
+query="DELETE FROM STUDENT_DETAILS WHERE SID=103"
+con=pymysql.connect(host="localhost",user="root",password="Tejesh69",database="act_student_db")
+#cursor creation
+cur=con.cursor() #enable to access data globally or concurrently
+#query execution
+cur.execute(query)
+con.commit()
+print("Record has been deleted successfully from table")
+#connection close
+con.close()
